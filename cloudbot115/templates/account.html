@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}账号管理{% endblock %}
+
+{% block content %}
+<div class="btn-toolbar">
+	<div class="btn-group">
+		<button class="btn btn-default" id="btn_account_modal" data-loading-text="添加中...">添加账号</button>
+		<button class="btn btn-default">修改账号</button>
+		<button class="btn btn-default">禁用账号</button>
+	</div>
+</div>
+<div class="table-responsive">
+	<table id="tbl_account" class="table table-striped">
+		<thead>
+			<tr>
+				<th><input type="checkbox" /></th>
+				<th>账号</th>
+				<th>密码</th>
+				<th>最后活动时间</th>
+				<th>状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for account in accounts %}
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td data-column='account'>{{ account.account }}</td>
+				<td data-column='password'>{{ account.password }}</td>
+				<td data-column='last_active_time'>{{ account.last_active_time }}</td>
+				<td data-column='status'>{{ account.status }}</td>
+				<td>禁用</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<div id="modal_account" class="modal fade" style="display:none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">添加账户</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="account_txt" class="control-label col-sm-2">账号</label>
+						<div class="col-sm-10">
+							<input type="text" id="txt_account" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password_txt" class="control-label col-sm-2">密码</label>
+						<div class="col-sm-10">
+							<input type="text" id="txt_password" class="form-control" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn_account_add" class="btn btn-primary">添加</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block append_js %}
+<script type="application/javascript" src="js/common/table.js"></script>
+<script type="application/javascript" src="js/account.js"></script>
+{% endblock %}

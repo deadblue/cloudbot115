@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		{% block append_css %}{% endblock %}
+		<meta name="description" content="">
+		<meta name="author" content="deadblue">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">bot console</a>
+				</div>
+			</div>
+		</nav>
+		<!-- 内容 -->
+		<div class="container-fluid" style="padding-top: 70px">
+			<div class="row">
+				<div class="col-xs-2 sidebar">
+					<ul class="nav nav-pills nav-stacked nav-sidebar">
+						<li><a href="#">统计</a></li>
+						<li><a href="#">账号管理</a></li>
+						<li><a href="#">日志查询</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-10">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+		</div>
+		<script type="application/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="application/javascript" src="js/lib/bootstrap.min.js"></script>
+		{% block append_js %}{% endblock %}
+	</body>
+</html>

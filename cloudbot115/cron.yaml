@@ -1,0 +1,4 @@
+cron:
+- description: 
+  url: /bot/starter
+  schedule: every 6 hours

@@ -1,0 +1,33 @@
+<div class="btn-toolbar">
+	<div class="btn-group">
+		<button class="btn btn-default" data-toggle="model" data-target="#accont_model">添加账号</button>
+		<button class="btn btn-default">修改账号</button>
+		<button class="btn btn-default">禁用账号</button>
+	</div>
+</div>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th><input type="checkbox" /></th>
+				<th>账号</th>
+				<th>密码</th>
+				<th>最后活动时间</th>
+				<th>状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for account in accounts %}
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>{{ account.account }}</td>
+				<td>{{ account.password }}</td>
+				<td>{{ account.last_active_time }}</td>
+				<td>{{ account.status }}</td>
+				<td>禁用</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

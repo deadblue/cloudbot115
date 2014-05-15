@@ -1,0 +1,21 @@
+application: cloudbot115
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /css
+  static_dir: static/css
+- url: /js
+  static_dir: static/js
+- url: /bot/(starter|worker|test)
+  script: bot.app
+- url: /.*
+  script: page.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: 2.6

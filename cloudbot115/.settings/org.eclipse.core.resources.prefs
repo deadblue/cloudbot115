@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//bot/__init__.py=utf-8
+encoding//bot/handler.py=utf-8
+encoding//bot/model.py=utf-8
+encoding//bot/u115.py=utf-8
+encoding//page/__init__.py=utf-8
+encoding//page/decorator.py=utf-8
+encoding//page/handler.py=utf-8
+encoding/template.py=utf-8
+encoding/test.py=utf-8
+encoding/util.py=utf-8
